@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Estilos.css">
+    <link rel="icon" href="Recursos/LogoCabezera.png">
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-expand-sm  navbar-dark fixed-top " style="background-color:#161426;  box-shadow: 3px 3px 5px grey;">
+            <div class="container">
+
+                <a href="index.html" class="navbar-brand"><img src="Recursos/Logo.png" width="35%" height="60%"></a>
+
+                    <button class="navbar-toggler" type=button data-toggle="collapse" data-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul id="Botones" class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                  <a href="index.html" class="nav-link">Inicio</a> 
+                            </li>
+                            <li class="nav-item active">
+                                  <a href="Contacto.html" class="nav-link">Contacto</a> 
+                            </li>
+                            <li class="nav-item">
+                                  <a href="Trivia.html" class="nav-link">Sorteos</a> 
+                            </li>
+                        </ul>
+                    </div>
+
+
+            </div>
+        </nav>
+    </header>
+    
+    
+    <br>
+    <div class="container">
+        <article id="Destacados" class="text-center"><h2>Estamos para Asesorarte</h2><hr><br></article>
+        <article>      
+          <div class="row">
+                <div id="Texto"><p>Ante cualquier duda, no dudes en comunicarte con nosotros<br><br></p></div>
+                 <div id="Formulario" class="col-md-7 col-lg-8">
+                        <!--La carga de datos no retorna a ningun lado-->
+                            <form class="needs-validation" novalidate>
+                                <div class="form-group">
+                                    <label for="texto1">Nombre: </label>
+                                    <input type="text" class="form-control" id="texto1" placeholder="Ingrese su Nombre" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, Ingrese su nombre
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ejemplocorreo">Dirección de correo electronico: </label>
+                                    <input type="email" class="form-control" id="ejemplocorreo" placeholder="Ingrese su mail" required>
+                                    <div class="invalid-feedback">
+                                        ¡Email Inválido!
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ejemploseleccion">Motivo de Consulta: </label>
+                                    <select multiple class="form-control" id="ejemploseleccion" required>
+                                        <option>Compras</option>
+                                        <option>Pagos</option>
+                                        <option>Soporte Tecnico</option>
+                                        <option>Otros</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        ¡Elija una opción!
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="areatexto">Mensaje: </label>
+                                    <textarea class="form-control" id="areatexto" rows="3" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Por favor, no dejes este campo vacio
+                                    </div>
+                                </div>
+                                <button id="Boton" type="submit" class="btn btn-primary">Enviar</button>
+                            </form>
+                     
+                        <script>
+                            (function() {
+                              'use strict';
+                              window.addEventListener('load', function() {
+                                var forms = document.getElementsByClassName('needs-validation');
+                                var validation = Array.prototype.filter.call(forms, function(form) {
+                                  form.addEventListener('submit', function(event) {
+                                    if (form.checkValidity() === false) {
+                                      event.preventDefault();
+                                      event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
+                                  }, false);
+                                });
+                              }, false);
+                            })();
+                        </script>
+                </div>
+                 <div id="Banner" class="col-md-5 col-lg-4"><img src="Recursos/banner_169_grande_832_.jpg"></div>
+            </div>
+        </article>
+    <br>
+    <hr>
+    <br>
+    </div>
+    
+    
+    <footer>
+        <div class="container">
+           
+                <section class="main row">
+                    <article id="Acerca" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+                        <ul>
+                                <h4>Acerca de Hardware Store</h4>
+                                <li>¿Quiénes Somos?</li>
+                                <li>Ubicación</li>
+                                <li>Trabajar con Nosotros</li>
+                                <li>Nuestros Servicios</li>
+                                <li>Contacto</li>
+                        </ul>
+                    </article>
+
+                    <article id="Redes" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+                        <ul>
+                            <h4>Seguinos</h4>
+                            <li><img src="Recursos/twiter.png" width="20px" height="20px"> Hardware_Store</li>
+                            <li><img src="Recursos/Insta.png" width="20px" height="20px"> Hardware_StoreAR</li>
+                            <li><img src="Recursos/Youtbe.png" width="20px" height="20px"> Info Hardware Store</li>
+
+                        </ul>
+                    </article>
+
+                </section>
+                       
+        </div>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

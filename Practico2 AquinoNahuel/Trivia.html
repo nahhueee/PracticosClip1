@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Estilos.css">
+    <link rel="icon" href="Recursos/LogoCabezera.png">
+    <title></title>
+</head>
+    
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-expand-sm  navbar-dark fixed-top " style="background-color:#161426;  box-shadow: 3px 3px 5px grey;">
+            <div class="container">
+
+                <a href="index.html" class="navbar-brand"><img src="Recursos/Logo.png" width="35%" height="60%"></a>
+
+                    <button class="navbar-toggler" type=button data-toggle="collapse" data-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul id="Botones" class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                  <a href="index.html" class="nav-link">Inicio</a> 
+                            </li>
+                            <li class="nav-item">
+                                  <a href="Contacto.html" class="nav-link">Contacto</a> 
+                            </li>
+                            <li class="nav-item active">
+                                  <a href="Trivia.html" class="nav-link">Sorteos</a> 
+                            </li>
+                        </ul>
+                    </div>
+
+
+            </div>
+        </nav>
+    </header>
+    
+    <article id="trivia" class="container">
+        
+        <br>
+        <article id="Destacados" class="text-center"><h2>Participá y Ganá</h2><hr><br></article>
+        <h3 style="text-align: center;">Respondé la siguiente pregunta para participar del sorteo</h3><br>
+        <p>¿Quien es el creador de Linux?</p>
+        
+        
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+            <form>
+                <label for="nombre">Respuesta:</label>
+                <input id="txtNombre" type="text" name="nombre"/>
+                <button id="Boton" onclick="mostrarNombre()">Enviar</button>
+            </form>
+            <p id="intentos"><b>Intentos restantes:</b> 4</p>
+            <p id="pista"></p>
+            <p id="pista2"></p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div id="laAlerta"></div>
+            </div>
+        </div>
+        
+        
+        <script>
+            
+            let chance = 4;
+                let bandera = false;
+                function mostrarNombre() {
+                    event.preventDefault();
+                    let elemento = document.getElementById('txtNombre');
+                    let unaAlerta = document.getElementById('laAlerta');
+                    let pista = document.getElementById('pista');
+                    let pista2 = document.getElementById('pista2')
+
+                    let nombre = elemento.value;
+                    nombre = nombre.toLowerCase()
+                    if(nombre==='linus torvalds' && chance > 0) {
+                        let cadena3 = "";
+                        cadena3 += '<div class="alert alert-success" role="alert">';
+                        cadena3 += '¡FELICIDADES! Respuesta correcta, estas participando';
+                        cadena3 += '</div>';
+                        unaAlerta.innerHTML = cadena3;
+                        bandera = true;
+
+                    } else {
+                        if (bandera === false && chance != 0) {
+                            chance -= 1;
+                        }
+                    }
+                    if(chance <= 0 && bandera == false) {
+                        let cadena2 = "";
+                        cadena2 += '<div class="alert alert-danger" role="alert">';
+                        cadena2 += 'Te has quedado sin intentos, mas suerte la proxima vez';
+                        cadena2 += '</div>';
+                        unaAlerta.innerHTML = cadena2;
+                    }
+                    if(chance === 2) {
+                        let cadena4 = "Pista: Es un ingeniero de software finlandés-estadounidense";
+                        pista.innerHTML = cadena4;
+                    }
+                    if(chance === 1) {
+                        let cadena5 = "Pista: Actualmente es responsable de la coordinación del proyecto";
+                        pista2.innerHTML = cadena5;
+                    }
+
+                    let elemento2 = document.getElementById('intentos');
+                    let cadena = "<b>Intentos restantes:</b> ";
+                    cadena += chance;
+                    elemento2.innerHTML = cadena;
+                }
+                      
+        </script>
+               
+    </article>
+    
+    <hr>
+    <article class="container">
+     <div class="row">
+             <div class="col-lg-12">
+				<img src="Recursos/Premio.jpg" class="img-fluid" alt="Responsive image">  
+             </div>
+        </div>
+    </article>
+    <br><br>
+    
+    <footer>
+        <div class="container">
+           
+                <section class="main row">
+                    <article id="Acerca" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+                        <ul>
+                                <h4>Acerca de Hardware Store</h4>
+                                <li>¿Quiénes Somos?</li>
+                                <li>Ubicación</li>
+                                <li>Trabajar con Nosotros</li>
+                                <li>Nuestros Servicios</li>
+                                <li>Contacto</li>
+                        </ul>
+                    </article>
+
+                    <article id="Redes" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+                        <ul>
+                            <h4>Seguinos</h4>
+                            <li><img src="Recursos/twiter.png" width="20px" height="20px"> Hardware_Store</li>
+                            <li><img src="Recursos/Insta.png" width="20px" height="20px"> Hardware_StoreAR</li>
+                            <li><img src="Recursos/Youtbe.png" width="20px" height="20px"> Info Hardware Store</li>
+
+                        </ul>
+                    </article>
+
+                </section>
+                       
+        </div>
+    </footer>
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
